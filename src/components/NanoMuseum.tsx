@@ -80,17 +80,18 @@ export default function NanoMuseum() {
     <div className="w-full h-screen bg-black relative">
       <Canvas
         camera={{
-          position: [0, 0, 30],
-          fov: 60,
+          position: [0, 0, isMobile ? 40 : 30],
+          fov: isMobile ? 75 : 60,
           near: 0.1,
           far: 1000
         }}
         gl={{
-          antialias: true,
+          antialias: !isMobile,
           alpha: false,
           powerPreference: 'high-performance'
         }}
-        shadows
+        shadows={!isMobile}
+        onTouchStart={() => setIsAutoRotating(false)}
       >
         <Suspense fallback={null}>
           {/* Lighting */}
