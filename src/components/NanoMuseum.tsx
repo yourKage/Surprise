@@ -152,8 +152,14 @@ export default function NanoMuseum() {
             enableZoom={true}
             enablePan={false}
             maxPolarAngle={Math.PI * 0.8}
-            minDistance={10}
-            maxDistance={50}
+            minDistance={isMobile ? 20 : 10}
+            maxDistance={isMobile ? 60 : 50}
+            enableDamping={true}
+            dampingFactor={0.05}
+            touches={{
+              ONE: isMobile ? THREE.TOUCH.ROTATE : undefined,
+              TWO: isMobile ? THREE.TOUCH.DOLLY_PAN : undefined
+            }}
           />
         </Suspense>
       </Canvas>
