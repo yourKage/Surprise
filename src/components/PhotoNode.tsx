@@ -192,7 +192,7 @@ export default function PhotoNode({ photo, position, onClick }: PhotoNodeProps) 
               ]}
             >
               <octahedronGeometry args={[0.1, 0]} />
-              <meshBasicMaterial
+              <meshStandardMaterial
                 color={hovered ? '#e94560' : '#0f3460'}
                 emissive={hovered ? '#e94560' : '#0f3460'}
                 emissiveIntensity={0.5}
