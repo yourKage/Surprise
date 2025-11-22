@@ -88,7 +88,9 @@ export function useAutoRotateCamera() {
         )
 
         // Always look at the target photo position
-        cameraRef.current.lookAt(targetPositionRef.current)
+        if (targetPositionRef.current) {
+          cameraRef.current.lookAt(targetPositionRef.current)
+        }
 
         // Update current position
         currentPositionRef.current.copy(cameraRef.current.position)
