@@ -10,7 +10,7 @@ export function useAutoRotateCamera() {
   const rotationSpeed = 3.0 // As specified in requirements
   const targetPositionRef = useRef<THREE.Vector3 | null>(null)
   const currentPositionRef = useRef<THREE.Vector3>(new THREE.Vector3(0, 0, 30))
-  const isTransitioningRef = useRef(false)
+  const isTransitioningRef = useRef<boolean>(false)
 
   // Auto-rotation effect
   useEffect(() => {
