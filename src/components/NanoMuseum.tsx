@@ -173,12 +173,18 @@ export default function NanoMuseum() {
       )}
 
       {/* Instructions overlay */}
-      <div className="absolute top-4 left-4 text-white bg-black bg-opacity-50 p-4 rounded-lg max-w-sm">
-        <h1 className="text-xl font-bold mb-2">Nano Museum</h1>
-        <p className="text-sm text-gray-300">
+      <div className={`absolute text-white bg-black bg-opacity-50 p-3 md:p-4 rounded-lg ${
+        isMobile ? 'top-2 left-2 right-2 max-w-full' : 'top-4 left-4 max-w-sm'
+      }`}>
+        <h1 className={`font-bold mb-2 ${isMobile ? 'text-lg' : 'text-xl'}`}>Nano Museum</h1>
+        <p className={`text-gray-300 ${isMobile ? 'text-xs' : 'text-sm'}`}>
           {isAutoRotating
-            ? "Click on any photo node to explore • Camera auto-rotating at speed 3.0"
-            : "Drag to rotate • Scroll to zoom • Click empty space to resume auto-rotation"
+            ? isMobile
+              ? "Tap nodes to explore • Camera auto-rotating"
+              : "Click on any photo node to explore • Camera auto-rotating at speed 3.0"
+            : isMobile
+              ? "Touch to rotate • Pinch to zoom"
+              : "Drag to rotate • Scroll to zoom • Click empty space to resume auto-rotation"
           }
         </p>
       </div>
