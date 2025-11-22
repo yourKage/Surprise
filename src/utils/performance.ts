@@ -130,7 +130,7 @@ export const deviceCapabilities = {
 
 // FPS-based quality adjustment
 export class AdaptiveQuality {
-  private currentQuality = 'high'
+  private currentQuality: 'low' | 'medium' | 'high' = 'high'
   private qualityLevels = ['low', 'medium', 'high'] as const
   private fpsHistory: number[] = []
   private maxHistorySize = 60 // Store last 60 frames
