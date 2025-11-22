@@ -6,7 +6,7 @@ import * as THREE from 'three'
 export function useAutoRotateCamera() {
   const cameraRef = useRef<THREE.PerspectiveCamera>(null)
   const [isAutoRotating, setIsAutoRotating] = useState(true)
-  const frameRef = useRef<number>()
+  const frameRef = useRef<number>(0)
   const rotationSpeed = 3.0 // As specified in requirements
   const targetPositionRef = useRef<THREE.Vector3 | null>(null)
   const currentPositionRef = useRef<THREE.Vector3>(new THREE.Vector3(0, 0, 30))
